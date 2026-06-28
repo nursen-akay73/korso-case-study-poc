@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Korso — Finansal Planlama Otomasyonu (PoC)</title>
+<style>
+  body { font-family: 'Segoe UI', Arial, sans-serif; background:#F8FAFC; color:#1E293B; padding:32px; max-width:880px; margin:auto; }
+  h1 { font-size:22px; }
+  .subtitle { color:#64748B; margin-top:-8px; }
+  .cards { display:flex; gap:16px; margin:24px 0; flex-wrap:wrap; }
+  .card { flex:1; min-width:180px; background:white; border-radius:12px; padding:18px; box-shadow:0 1px 3px rgba(0,0,0,0.08); border-left:6px solid #4F46E5; }
+  .card.red { border-left-color:#E11D48; }
+  .card.green { border-left-color:#16A34A; }
+  .card h3 { margin:0; font-size:13px; color:#64748B; font-weight:600; text-transform:uppercase; }
+  .card p { margin:6px 0 0; font-size:24px; font-weight:700; }
+  table { width:100%; border-collapse:collapse; background:white; border-radius:8px; overflow:hidden; margin-bottom:28px; }
+  th, td { padding:10px 12px; border-bottom:1px solid #E2E8F0; font-size:14px; text-align:left; }
+  th { background:#1E293B; color:white; }
+  img { width:100%; border-radius:12px; margin:16px 0; box-shadow:0 1px 3px rgba(0,0,0,0.08); }
+  .badge { display:inline-block; background:#FEF3C7; color:#92400E; padding:3px 10px; border-radius:20px; font-size:12px; font-weight:600; }
+</style>
+</head>
+<body>
+  <h1>Korso — Finansal Planlama Otomasyonu <span class="badge">PoC</span></h1>
+  <p class="subtitle">Madde 10'da tasarlanan otomasyon planının çalışan prototipi · Case Study Bonus</p>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Mevcut Nakit Pozisyonu</h3>
+      <p>$87,940</p>
+    </div>
+    <div class="card red">
+      <h3>Aylık Yakım Oranı</h3>
+      <p>$20,687</p>
+    </div>
+    <div class="card green">
+      <h3>Tahmini Runway</h3>
+      <p>4.3 ay</p>
+    </div>
+  </div>
+
+  <img src="cash_balance_chart.png" alt="Nakit pozisyonu grafiği">
+
+  <h2>⚠ İnsan Onayı Bekleyen İşlemler (3)</h2>
+  <p style="color:#64748B;font-size:14px;">Yeni tedarikçi + yüksek tutar kombinasyonu otomatik geçmez — Madde 8.2'deki Dual-Guardrail mantığının finansal versiyonu.</p>
+  <table>
+    <tr><th>Tarih</th><th>Tedarikçi</th><th>Açıklama</th><th style="text-align:right;">Tutar</th></tr>
+    <tr>
+                <td>2026-04-22</td>
+                <td>Unicorn Data Services LLC</td>
+                <td>New vendor - large one-off charge</td>
+                <td style="text-align:right;color:#E11D48;font-weight:600;">$-6,800</td>
+            </tr><tr>
+                <td>2026-05-20</td>
+                <td>TalentForge Recruiting</td>
+                <td>Recruiting fee - new vendor</td>
+                <td style="text-align:right;color:#E11D48;font-weight:600;">$-4,200</td>
+            </tr><tr>
+                <td>2026-06-20</td>
+                <td>Quantum Compute Labs</td>
+                <td>Unusual large transfer - new vendor</td>
+                <td style="text-align:right;color:#E11D48;font-weight:600;">$-9,500</td>
+            </tr>
+  </table>
+
+  <h2>Kategori Bazında Otomatik Sınıflandırma</h2>
+  <table>
+    <tr><th>Kategori</th><th style="text-align:right;">Toplam</th></tr>
+    <tr><td>Personel Maaşları</td><td style="text-align:right;">$-54,000</td></tr><tr><td>Hukuk</td><td style="text-align:right;">$-7,500</td></tr><tr><td>LLM API Maliyeti</td><td style="text-align:right;">$-6,060</td></tr><tr><td>İşe Alım</td><td style="text-align:right;">$-4,200</td></tr><tr><td>Bulut Altyapısı</td><td style="text-align:right;">$-3,940</td></tr><tr><td>Muhasebe (Otomatikleştirilen Rol)</td><td style="text-align:right;">$-3,600</td></tr><tr><td>Ofis/Coworking</td><td style="text-align:right;">$-3,300</td></tr><tr><td>Sigorta</td><td style="text-align:right;">$-1,140</td></tr><tr><td>SaaS Araçları</td><td style="text-align:right;">$-1,020</td></tr><tr><td>Diğer / Kategorize Edilemedi</td><td style="text-align:right;">$22,700</td></tr>
+  </table>
+
+  <p style="color:#94A3B8;font-size:12px;margin-top:32px;">Bu rapor otomatik olarak üretilmiştir — cashflow_agent.py · Korso Case Study PoC</p>
+</body>
+</html>
